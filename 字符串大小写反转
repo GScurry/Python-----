@@ -1,0 +1,16 @@
+s=input('input a string:\n')
+Lup=list(s.upper())
+Llow=list(s.lower())
+L=list(s)
+i=0
+s1=''
+length=len(L)
+while i<length:
+    if L[i]!=Lup[i]:
+        L[i]=Lup[i]
+    else:
+        L[i]=Llow[i]
+    s1=s1+L[i]
+    i=i+1
+    
+print(s1)
