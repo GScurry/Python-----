@@ -1,0 +1,12 @@
+num=input('input a num:  ')
+
+dic={'0':'zero','1':'one','2':'two','3':'there','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine'}
+
+L=list(num)
+s=''
+for x in L:
+    if s!='':
+        s=s+'-'+dic[x]
+    else:
+        s=dic[x]
+print (s)
