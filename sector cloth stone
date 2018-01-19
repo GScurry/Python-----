@@ -1,0 +1,23 @@
+import random
+dic={1:'stone',2:'sector',3:'cloth'}
+L=['stone','sector','cloth','exit']
+while True:
+    s=input('''please input:
+      stone
+      sector
+      cloth
+      exit\n'''
+      )
+    if s not in L:
+        print('input not valid')
+    if s=='exit':
+        break
+    num=random.randint(1,3)
+    c=dic[num]
+    if s==c:
+        print('draw')
+    elif (c=='stone' and s=='cloth') or (c=='sector' and s=='stone') or (c=='cloth' and s=='sector'):
+        print('you win')
+    else:
+        print('you lose')
+    print(c)      
