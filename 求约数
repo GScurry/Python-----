@@ -1,0 +1,17 @@
+'''
+返回一个数的所有约数，包括1和它本身
+'''
+
+num=input('input a number:    ')
+num=int(num)
+
+def getfactors(num):
+    count=num
+    L=[]
+    while count>0:
+        if num%count==0:
+            L.append(count)
+        count=count-1
+    return L     
+   
+print(getfactors(num)) 
