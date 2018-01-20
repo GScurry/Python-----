@@ -1,0 +1,23 @@
+'''
+判断一个数是否是完全数
+6=1+2+3
+28=1+2+4+7+14
+496=1+2+4+8+16+31+62+124+248
+'''
+
+num=input('input a number:    ')
+num=int(num)
+
+def getfactors(num):
+    count=num-1
+    L=[]
+    while count>0:
+        if num%count==0:
+            L.append(count)
+        count=count-1
+    return L     
+ 
+if sum(getfactors(num))==num:
+    print (True)
+else:
+    print (False)  
