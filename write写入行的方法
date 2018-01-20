@@ -1,0 +1,8 @@
+f=open('C:/Users/zmh/Desktop/file.txt','w')
+while True:
+    aline=raw_input("enter a line ('.' to quit):")
+    if aline!='.':
+        f.write('%s%s'%(aline,os.linesep))
+    else:
+        break
+f.close()
