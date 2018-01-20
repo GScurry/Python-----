@@ -1,0 +1,38 @@
+'''
+求一个数所有素数的约数，这些约数的乘积为这个数
+'''
+
+num=input('input a number:    ')
+num=int(num)
+
+def isprime(num):   
+    count1=int(num/2) 
+    if num==1 or num==2:
+        return 1
+        print('%s is a prime'%(num))
+        return
+    while count1>1:
+        if (num%count1)==0:
+            return 0
+            print('%s is not a prime'%(num))
+            break
+        count1=count1-1
+    else:
+        return 1
+        print('%s is a prime'%(num)) 
+
+def getfactors(num):
+    count=num
+    L=[]
+    while num>1:
+        if num%count==0 and isprime(count):
+            num=num/count
+            L.append(int(count))
+            count=num
+        else:
+            count=count-1
+    return L     
+   
+
+print(getfactors(num))      
+      
