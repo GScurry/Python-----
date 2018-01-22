@@ -1,0 +1,8 @@
+def myopen(filename,mode='r'):
+    try:
+        fo=open(filename,mode)
+    except:
+        fo=None
+    return fo
+f=myopen('C:/Users/zmh/Desktop/ab.py')
+print(f)
