@@ -1,0 +1,29 @@
+# 找指定目录下含有某字符串的文件，并将结果输出到txt文件中去
+ import os
+dir=r'C:\Users\zmh\Desktop\pyfile'
+os.chdir(dir)
+cwd=getcwd()
+L_file=os.listdir(cwd)
+L_fileok=[]
+count_f=0
+count_fok=0
+for filename in L_file:
+    path=os.path.join(cwd,filename)
+    print(filename)
+    file=open(filename,'r')
+    for content in file:
+        if '_doc_' in content:
+            L_fileok.append(filename)
+            count_fok=count_fok+1
+            break
+    count_f=count_f+1
+file.close()
+result=open(r'C:\Users\zmh\Desktop\pyfile\统计结果.txt','w')
+result.write('包含"_doc_"字样的文件数为：%d\n'%(count_fok))
+result.write('文件名：\n')
+i=0
+for x in L_fileok:
+    result.write(L_fileok[0])
+    i=i+1    
+print(count_fok)    
+print(L_fileok)
