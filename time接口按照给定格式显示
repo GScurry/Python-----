@@ -1,0 +1,42 @@
+'''''数据类。提供一个 time 模块的接口，允许用户按照自己给定时间的格式，比如: 
+“MM/DD/YY,” “MM/DD/YYYY,” “DD/MM/YY,” “DD/MM/ YYYY,” “Mon DD, YYYY,” 
+或是标准的 Unix 日期格式：“Day Mon DD, HH:MM:SS YYYY” 来查看日期。你的类应该 
+维护一个日期值，并用给定的时间创建一个实例。如果没有给出时间值，程序执行时会默认 
+采用当前的系统时间。还包括另外一些方法： 
+update() 按给定时间或是默认的当前系统时间修改数据值 
+display() 以代表时间格式的字符串做参数，并按照给定时间的格式显示: 
+'MDY' ==> MM/DD/YY 
+'MDYY' ==> MM/DD/YYYY 
+'DMY' ==> DD/MM/YY 
+'DMYY' ==> DD/MM/YYYY 
+'MODYY' ==> Mon DD, YYYY 
+如果没有提供任何时间格式，默认使用系统时间或 ctime()的格式。 附加题: 把这个类和练习 
+6-15 结合起来'''  
+
+import time
+class  Time(object):
+    def __init__(self,t=time.time()):
+        self.time=t
+    def __update__(self,t=time.time()):
+        self.time=t
+    def display(self,format=None):
+        fmt={}
+        fmt['MDY']='%m/%d/%y'
+        fmt['MDYY']='%m/%d/%Y'
+        fmt['DMY']='%d/%m/%y'
+        fmt['DMYY']='%d/%m/%Y'
+        fmt['MODYY']='%m %d, %Y'
+        if format in fmt:
+            mt=time.localtime(self.time)
+            print(time.strftime(fmt[format],mt))
+        else:
+            print(time.ctime())
+            
+t=Time()
+t.display('MDY')  
+t.display('MDYY')  
+t.display('DMY')  
+t.display('DMYY')  
+t.display('MODYY')
+t.__update__(time.time()+5)
+t.display('MDY')     
