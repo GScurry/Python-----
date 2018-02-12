@@ -1,0 +1,30 @@
+class Stack(object):
+    def __init__(self,stack=[]):
+        self.s=stack
+    def __push__(self,ele):
+        self.s.append(ele)
+    def __pop__(self):
+        self.s.pop()
+    def __isempty__(self):
+        if self.s==[]:
+            return True
+        else:
+            return False
+    def __peek__(self):
+        return self.s[-1]
+    def __str__(self):
+        return str(self.s)
+    __repr__=__str__
+    
+if __name__=='__main__':
+    L=[1,2,3,4]
+    c=Stack(L)   
+    c.__push__(5)
+    print(c)
+    c.__pop__()
+    c
+    c.__pop__()
+    print(c)
+    print(c.__isempty__())
+    print(c.__peek__())       
+   
